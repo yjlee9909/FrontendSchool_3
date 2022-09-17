@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        /* > : div 바로 밑 h2 : 자식 선택자 */
+        div > h2 {
+            color: red;
+        }
+
+        /* 자손 선택자 */
+        div h2 {
+            color: blue;
+        }
+        .foo > p {
+            color: aqua;
+        }
+
+        /* 인접 형제 콤비네이터 */
+        
+    </style>
+</head>
+<body>
+    <section class="foo">
+        <header>
+            <!-- sdf -->
+            <h1>집에서 맛있는 피자 만들기</h1>
+            <p>주위에서 쉽게 구할 수 있는 재료를 중심으로</p>
+        </header>
+        <p>AAAAA</p>
+    </section>
+    <div>
+        <h2>hello world</h2>
+    </div>
+    <div>
+        <div>
+            <h2>hello world</h2>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <section>
+                <h2>hello world</h2>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

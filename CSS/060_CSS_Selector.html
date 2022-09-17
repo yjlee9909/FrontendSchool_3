@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        
+
+        .foo:first-child {
+            background-color: blue;
+        }
+        .foo:last-child {
+            background-color: red;
+        }
+        /* 보통 간격 조절할때 많이 사용 마지막 지정해서 바텀정도? */
+    </style>
+</head>
+<body>
+    <!-- 
+        가상 클래스 선택자 : 클래스가 없는데 있는 것처럼 처리(콜론이1개)
+        가상 요소 선택자 : 요소가 없는데 있는 것처럼 처리(콜론이2개!!!)
+    -->
+    <ul>
+        <!-- 주의사항 : foo의 첫번째 자식이 아님!!!!
+        foo 가진 부모의 첫번째 자식이 foo일 경우에~~
+        <div>hello</div> -->
+        <li class="foo">1</li>
+        <li class="foo">2</li>
+        <li class="foo">3</li>
+        <li class="foo">4</li>
+        <li class="foo">5</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        div[class] {
+	        font-size: 10px;
+        }
+        /* 태그[속성] -> 속성자리에 해당하는 태그를 모두선택 */
+        a[href="http://www.paullab.co.kr"] {
+    font-size: 32px;
+}
+div[class~="weniv"] {
+    color: red;}
+/* }   완전헌 단어로 포함하는 태그를 선택 */
+    </style>
+</head>
+<body>
+    <div>hello world</div>
+    <div class="one">he</div>
+    <a href="http://www.paullab.co.kr">gdssd</a>
+    <a href="">sdf</a>
+    <div class="weniv">hello</div>
+    <div class="wenivs">hello</div>
+    <div class="we weniv we">hello</div>
+</body>
+</html>

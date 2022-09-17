@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        a[href*="weniv"] {
+	        color: red;
+        }
+        /* *= 단어가 포함만 되어있으면 다 작동됨
+        ~+ 완전한 단어로만 포함 */
+    </style>
+</head>
+<body>
+    <!-- 샾 - 리프레시 안되고 최상단으로 올라가지 않음!!!! -->
+    <a href="#">눌러</a>
+    <a href="weniv">눌러</a>
+    <a href="wenivs">눌러</a>
+    <a href="we weniv">눌러</a>
+    <a href="we weniv we">눌러</a>
+    
+
+</body>
+</html>

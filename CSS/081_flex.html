@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <style>
+            .container {
+                display: flex;
+                width: 100%;
+            }
+            .items {
+                
+                height: 50px;
+                background-color: aqua;
+                border: 1px solid black;
+                
+            }
+            .items:nth-child(1) {
+                flex-grow: 2;
+                /* 여백을 비율로!!! (전체 넓이가 아님!!)
+                여백이 다 사라지면 같아진다.
+                여백이 늘어나거나 줄어들때 2배로 늘어나거나 줄어드는 것 */
+            }
+            .items:nth-child(2) {
+                flex-grow: 1;
+                
+            }
+            .items:nth-child(3) {
+                flex-grow: 1;
+                
+            }
+            .items:nth-child(4) {
+                flex-grow: 1;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="items">hello world</div>
+            <div class="items">hello world</div>
+            <div class="items">hello world</div>
+            <div class="items">hello world</div>
+            
+        </div>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        button {
+            border: 1px solid black;
+            padding: 15px;
+            background-color: green;
+            border-radius: 5px;
+            color: white;
+            /* 변환되는 것을 0.5초 간격을 주겠다. */
+            transition: all .5s;
+        }
+
+        button:hover {
+            background-color: red;
+            letter-spacing: 3px;
+            
+        }
+        a:active{
+	        color: red;
+        }
+        input:focus{
+            border: 5px solid royalblue;
+        }
+        input:checked+label{
+         background-color: lightgreen;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- 
+            가상 클래스 선택자 : 클래스가 없는데 있는 것처럼 처리(콜론이 1개입니다.)
+            가상 요소 선택자 : 요소가 없는데 있는 것처럼 처리(콜론이 2개입니다.)
+        -->
+        <button>hello</button>
+        <a href="#">hello</a>
+        <form action="" method="get">
+            <input type="text">
+            <input type="text">
+        </form>
+
+        <input id="check" type="checkbox">
+        <label for="check">오늘 아침은 삼겹살입니다.</label>    
+
+        <ul>
+            <li>hello</li>
+            <li>hello</li>
+            <li>hello</li>
+        </ul>
+        <!-- li끼리 사촌관계 -->
+        <ul>
+            <li>hello</li>
+            <li>hello</li>
+            <li>hello</li>
+        </ul>
+</body>
+</html>

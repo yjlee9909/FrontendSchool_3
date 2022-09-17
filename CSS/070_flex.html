@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        /*         
+        1차원 배열 : flex 먼저 고려하기 (한 줄)
+        2차원 배열 : grid 먼저 고려하기 (두 줄 이상)
+        */
+
+        .container {
+            display: flex;
+            /* row가 기본값 */
+            /* flex-direction: row;
+            flex-direction: column; */
+            /* flex-direction: row-reverse; */
+
+        }
+        .item {
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+            border: solid 3px black;
+        }
+    </style>
+</head>
+<body>
+    <!-- 외부 디스플레이 타입(inline, block, inline-block) : 부모와 형제간의 박스 배치
+    내부 디스플레이 타입 (flex, grid) : 내부 자식들의 박스 배치 -->
+
+    <div class="container">
+        <!-- .item{$}*6 -->
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+</body>
+</html>

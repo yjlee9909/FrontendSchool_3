@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="013.html" method="get">
+        <!-- readonly 경우 : 회원 가입 할 때, 주민등록 번호 입력
+        받으면 성별이 들어가는 경우 -->
+        <!-- readonly 수정 불가능 -->
+        <input type="text" name="성별" value="남" readonly>
+        <input type="text" name="아이디">
+        <!-- maxlength 입력 길이 제한 -->
+        <!-- minlength, maxlength 제한 두는 이유 -> 필수 입력하게 하려고 -->
+        <input type="text" name="test" maxlength="10"><br />
+        개인정보 동의해?
+        <input type="checkbox" name="test" required /><br />
+        <input type="text" placeholder="통장잔고" name="test" required>
+        <input type="tel" name="tlno" id="tlno" title="전화번호를 입력하세요." placeholder="00*-000*-0000"
+            pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{3,4}" maxlength="13" />
+        <!-- 0-9까지 숫자가 2번이나 3번 꼭 들어가기
+        - 꼭 사용 -->
+
+        <button type="submit">회원가입</button>
+    </form>
+</body>
+
+</html>
