@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  @keyframes hojun {
+    from{
+      background-position: 0px, 0px;
+    }
+    to {
+      /* 왼쪽 위 꼭짓점 기준으로 영상이 다 끝났을때 한 프레임 남기고 -3730위치에 와야함 */
+      background-position: -3730px, 0;
+    }
+  }
+  .building1 {
+    width: 110px;
+    height: 180px;
+    background: url(./building/building1.png) no-repeat;
+    /* 110 px씩 밀면서 step으로 끊기게 */
+    animation: hojun 5s steps(33);
+    /* 마지막 이미지 남아있게 해주기 */
+    animation-fill-mode: forwards;
+  }
+  </style>
+</head>
+<body>
+  <div class="building1"></div>
+</body>
+</html>
