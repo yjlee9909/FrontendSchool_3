@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        @font-face {
+            font-family: "Spoaq Han Sans Neo";
+            src: url("images/fonts/SpoqaHanSansNeo-Medium.otf");
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: "Spoaq Han Sans Neo";
+            src: url("images/fonts/SpoqaHanSansNeo-Regular.otf");
+            font-weight: 400;
+        }
+        body {
+            /* 400짜리가 주를 이룸 */
+            font-family: "Spoaq Han Sans Neo", "sans-serif";
+            line-height: 15px;
+            font-weight: 400;
+            font-size: 12px;
+        }
+        
+
+        .cont-login {
+            width: 350px;
+            padding: 18px 15px 17px;
+            margin: 20px auto;
+            border: 1px solid #DBDBDB;
+            border-radius: 5px;
+            
+        }
+        .cont-login .txt-login {
+            
+            margin-bottom: 16px;
+        }
+        .cont-login .link-login {
+            /* inline이라서 밑 요소에 영향을 미치지 않음 */
+            display: block;
+            padding: 13px 20px 12px;
+            background: #711BFF;
+            border-radius: 4px;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 500;
+            margin-bottom: 17px;
+        }
+        .link-login .img-login {
+            width: 57px;
+            height: 11px;
+            /*2배 이미지로 다운받아서 반으로 줄여야함*/
+            margin-right: 8px;
+        }
+
+        .cont-login .find {
+            float: left;
+        }
+        .cont-login .join {
+            float: right;
+            margin-right: 2px;
+        }
+        /* 부모에 오버플로우 히든 줘서 높이 인식시키거나
+        디스플레이 속성으로 인라인 블럭 부여하기
+        아니면 클리어 픽스부여 가상요소 자식으로 
+        article 에 clearfix 클래스 속성 부여*/
+        .cont-login .img-find {
+            width: 16px;
+            height: 16px;
+        }
+        .cont-login .find * {
+            /* 이미지 앵커 앵커는 인라인요소
+            요소에 플롯을 넣게되면 디스플레이 설정이 바뀐다
+            베이스라인이 사라짐(글씨가 아니게되므로)
+            아이콘이 텍스트 베이스라인위에 올라오게 되었는데
+            플롯을 통해 블록으로 바뀌고 가지런히 정렬이됨 */
+            float: left;
+        }
+        .cont-login .img-find, .cont-login .img-join  {
+            margin-right: 4px;
+        }
+        .find [class^=link], .join [class^=link] {
+            text-decoration: none;
+            color: #767676;
+        }
+        .cont-login .img-join {
+            width: 16px;
+            height: 16px;
+        }
+        .cont-login .join *{
+            float: left;
+            
+        }
+        .find .link-id::after {
+            /* 인라인블록 적용을 해야 넓이 높이 설정이 가능해진다. */
+            display: inline-block;
+            content: "";
+            width: 1px;
+            height: 11px;
+            background-color: #767676;
+            margin: 0 6px 0 5px;
+            vertical-align: -1px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 클래스 네이밍 : 형태 + 의미 -->
+    <article class="cont-login clearfix">
+        <!-- 알티클 헤딩필요 -->
+        <h2 class="txt-hide">
+            위니브 로그인</h2>
+        <p class="txt-login">
+            더 편리해진 위니브에 오신 것을 환영합니다.
+        </p>
+        <a href="" class="link-login">
+            <img src="images/weniv_logo.png" alt="" class="img-login">
+            로그인
+        </a>
+        <div class="find">
+            <img src="images/icon-lock.png" alt="" class="img-find">
+            <a href="" class="link-id">아이디</a>
+            <a href="" class="link-pwd">비밀번호 찾기</a>
+        </div>
+        <div class="join">
+            <img src="images/icon-user.png" alt="" class="img-join">
+            <a href="" class="link-join">회원가입</a>
+        </div>
+
+    </article>
+</body>
+
+</html>
