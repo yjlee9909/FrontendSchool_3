@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .ir_pm {
+            display: block;
+            overflow: hidden;
+            Font-size: 1px;
+            line-height: 0;
+            /* 들여쓰기 왼쪽으로 보내버림
+            솔직히 오버플로우와 텍스트 인덴트만 필요하지만
+            인라인인지 알려주기 위해 디스플레이 블록으로 설정
+            -9999 위치에 공간을 만들어주게됨... 최근은 잘 사용 안함 */
+            text-indent: -9999px;
+        }
+
+        .ir_wa{
+            /* 최근에 많이 사용하는 기법 
+            문제가 생겨서 이미지가 다운된 경우 
+            보통 백그라운드 이미지 사용할때 (altx)
+            이미지가 안나왔을 때
+            한 번 더 감싸줘야함*/
+	        display:block;
+	        overflow:hidden;
+	        position:relative;
+	        z-index:-1;
+	        width:100%;
+	        height:100%
+        }
+        button {
+            background: url("1.png") 0 0/ contain no-repeat;
+            width: 100px;
+            height: 100px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <button class="ir_pm">
+        <!-- 무슨 버튼인지 텍스트로 알려줘야함...
+        디자인적으로는 없애기... -->
+        <span class="ir_wa">중요합니다!!!!</span>
+    </button>
+</body>
+
+</html>

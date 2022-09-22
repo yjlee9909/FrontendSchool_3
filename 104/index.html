@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 실무 테크닉</title>
+    <style>
+        .txt-hide {
+           position: absolute;
+           clip: rect(0 0 0 0);
+           width: 1px;
+           height: 1px;
+           margin: -1px;
+           overflow: hidden;
+        }
+        .labl-hold::before {
+            /* 가상요소는 인라인 속성이 기본 */
+            display: inline-block;
+            content: ' ';
+            width: 22px;
+            height: 22px;
+            background-image: url("images/css_sprites.png") ;
+            background-position: -10px -10px;
+            vertical-align: -5px;
+        }
+        /* 가상ㅇ클래스로 마치 클래스를 요소에 넣은것처럼
+        체크드 되었을때를 의미 
+        :: 가상요소
+        : 가상클래스*/
+        .inp-hold:checked+.labl-hold::before {
+            background-image: url("images/css_sprites.png");
+            background-position: -52px -10px;
+        }
+        /* <!-- 탭으로 포커싱 -> 접근성의 중요성 -> 포커스를 넣어주기 --> */
+        /* 포커싱 */
+        .inp-hold:focus+.labl-hold::before {
+            /* 레이아웃에 영향을 미치지 않음 */
+            outline: 2px solid #000;
+            outline-offset: 5px;
+            /* 보더를 사용하면 내용이 밀림 */
+            /* border: 2px solid #000; */
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    
+    <input type="checkbox" id="inpHold" class="inp-hold txt-hide">
+    <label for="inpHold" class="labl-hold">로그인 상태 유지</label>
+</body>
+</html>

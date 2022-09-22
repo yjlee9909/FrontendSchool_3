@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clip 사용하기</title>
+    <style>
+        div {
+            width: 500px;
+            position: relative;
+        }
+        img {
+            /* clip사용 하려면 앱솔루트 적용시켜야함 */
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            clip: rect(50% 10% 27%);
+            /* top,right,bottom,left:;
+            top과 bottom 기준으로 left,right 어느정도
+            크기 조절을 해야 나타남...
+            
+            clip, clip-path 둘이 같이 사용해주면
+            대응하기 좋다.*/
+            clip-path: inset(20%);
+        }
+    </style>
+</head>
+<body>
+    <div><img src="https://images.chosun.com/resizer/aRkMdmnf2bEYLwNOTLe2ZvrHDnQ=/540x405/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/YIARR5OJCFAG5AGRYZYWOGTQKE.jpg" alt=""></div>
+</body>
+</html>

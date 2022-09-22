@@ -1,0 +1,197 @@
+<!-- <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>셀렉트 박스 없이 실습</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        body {
+            text-align: center;
+            margin: 20px auto;
+            
+        }
+        .btn-select {
+            width: 200px;
+            height: 40px;
+            background: #FFFFFF;
+            border: 1px solid #9B51E0;
+            border-radius: 10px;
+            margin-top: 10px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            padding-left: 14px;
+        }
+        .btn-select.on {
+            display: block;
+        }
+        ul li button {
+            display: block;
+            width: 200px;
+            height: 40px;
+            background: #FFFFFF;
+            border: none;
+        }
+        ul li button:hover {
+            background: #F8E4FF;
+            border-radius: 8px;
+            width: 184px;
+            height: 30px;
+            margin: 5px 8px;
+            pointer-events: none;
+            margin: auto;
+        }
+        ul {
+            /* display: none; */
+            width: 200px;
+            height: 200px;
+            background: #FFFFFF;
+            border: 1px solid #C4C4C4;
+            box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+            margin: 9px auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        li button {
+            width: 200px;
+            height: 40px;
+            text-align: left;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h2>셀렉트 박스 실습해보기</h2>
+    <button class="btn-select">최애 프로그래밍 언어</button>
+    <ul>
+        <li><button type="button">Python</button></li>
+        <li><button>Java</button></li>
+        <li><button>JavaScript</button></li>
+        <li><button>C>#</button></li>
+        <li><button>C/C++</button></li>
+    </ul>
+
+    <script>
+        const btn = document.querySelector('.btn-select');
+        const list = document.querySelector('.list-member');
+        btn.addEventListener('click', () => {
+            list.classList.toggle('on');
+        });
+        list.addEventListener('click', (event) => {
+            if (event.target.nodeName === "BUTTON") {
+                btn.textContent = event.target.textContent;
+                list.classList.remove('on');
+            }
+        });
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .cont-select {
+            /* ul의 기준이 되도록 */
+            position: relative;
+            width: 200px;
+            margin: 100px auto 0;
+        }
+        .btn-select {
+            width: 100%;
+            padding: 11px 20px 11px 13px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            text-align: left;
+            background: #FFFFFF;
+                    /* Purple 1 */
+
+            border: 1px solid #9B51E0;
+            border-radius: 10px;
+            background: url("Polygon\ 1.png") right 12px center no-repeat;
+
+            cursor: pointer;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .btn-select:focus {
+            outline: 3px solid #F8E4FF;
+        }
+        .btn-select.on {
+            background: url("Polygon\ 1\ \(1\).png") right 12px center no-repeat;
+        }
+
+        /* on 클래스가 같이 있을 때 + 근접형제 선택자 (바로 뒤인 리스트 멤버를 선택 -> 리스트 멤버 속성을 블록으로 만들어라~) */
+        .btn-select.on+.list-member {
+            display: block;
+        }
+        .list-member {
+            display: none;
+            /* 밑에 다른 요소가 추가되어서 리스트가 펼쳐지면 같이 밀려남... 그래서 absolute로 종속되게 만들기 */
+            position: absolute;
+            /* position: relative; */
+            top: 0;
+            left: 0;
+            /* 버튼 높이+마진만큼 내려오기 */
+            top: 49px;
+            /* top: 9px; */
+            background: #FFFFFF;
+            border: 1px solid #C4C4C4;
+            box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+            border-radius: 10px; 
+            width: 100%;   
+            
+        }
+        .list-member li {
+            padding: 5px 7px;
+        }
+        .list-member li button {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            padding: 7px 10px;
+            background-color: #FFFFFF;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            width: 100%;
+            text-align: left;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .list-member li button:focus,
+        .list-member li button:hover {
+            background: #F8E4FF;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <article class="cont-select">
+        <h2 class="txt-hide">최애 프로그래밍 언어를 선택해주세요</h2>
+        <button type="button" class="btn-select">최애 프로그래밍 언어</button>
+        <ul class="list-member">
+            <li><button type="button">Python</button></li>
+            <li><button type="button">Java</button></li>
+            <li><button type="button">JavaScript</button></li>
+            <li><button type="button">C#</button></li>
+            <li><button type="button">C/C++</button></li>
+        </ul>
+    </article>
+</body>
+</html>
+
+/* https://www.figma.com/file/c4mPUK5xcqzzRVBadSu6BG/멋사_프론트엔드스쿨_3기?node-id=4624%3A2536 */
