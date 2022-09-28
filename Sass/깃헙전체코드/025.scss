@@ -1,0 +1,9 @@
+$lee : 10;
+@while $lee > 1 {
+    $lee : $lee - 2;
+    .content-#{$lee} {
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+}

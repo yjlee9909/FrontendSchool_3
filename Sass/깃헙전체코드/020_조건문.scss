@@ -1,0 +1,43 @@
+@use "sass:math";
+
+$one : 10px;
+$two : 100px;
+
+// if문 예시 작성
+// Sass 공식문서
+// circle이 false면 사각형을, true이면 원형으로 스타일함
+@mixin avatar($size, $circle: false) {
+    width: $size;
+    height: $size;
+    background-color: red;
+
+    @if $circle {
+        border-radius: $size / 2; // step 1
+        // border-radius: ($size / 2) + px; // step 2
+        // border-radius: ($size / 2) + "px" // 문자열 "00px"로 들어갑니다.
+
+        // 권고사항
+        // math.div($size, 2) or calc($size / 2);
+    } @else {
+        border-radius: 3px;
+    }
+}
+
+.one {
+    @include avatar(10px, true);
+}
+.two {
+    @include avatar(10, true);
+}
+.three {
+    @include avatar(10px, false);
+}
+.four {
+    @include avatar(10px);  // false로 들어감
+}
+.five {
+    @include avatar(10px, 10>190);
+}
+.six {
+    @include avatar(10px, $one > $two);
+}

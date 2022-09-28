@@ -1,0 +1,12 @@
+// Scss - for문
+
+// #{$변수명}
+
+
+// for문을 이용해 nth-선택자에게 각각의 image를 배경에 넣어준다.
+@for $hehehe from 1 through 5 {
+    .profile-#{$hehehe} {
+      background-color: red;
+      font-size: #{$hehehe* 10}px;
+    }
+  } 
