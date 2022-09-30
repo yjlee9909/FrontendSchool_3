@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>String</title>
+    </head>
+    <body>
+        <script>
+            let txt = "abcAHelloBC";
+            let txt2 = "abcdef CEO leeyoojin CEO";
+            let regExp = /[A-Z]/g;
+            console.log(txt.search(regExp));
+
+            // slice(시작인덱스, 종료인덱스) : 시작인덱스부터 종료인덱스-1까지 반환합니다.
+            console.log(txt2.slice(1, 3));
+            console.log(txt2.slice(3, 1)); // 작동하지 않습니다.
+            console.log(txt2.slice(2));
+
+            // substring(시작인덱스, 종료인덱스) : 시작인덱스부터 종료인덱스-1까지 반환합니다.
+            console.log(txt2.substring(1, 3));
+            console.log(txt2.substring(3, 1)); // 작동합니다.
+            console.log(txt2.substring(2));
+
+            // substr 대신 substring이나 slice를 사용 권장!!!!!
+
+            // substr(시작위치, 길이) : 시작인덱스부터 길이만큼 반환합니다.
+            // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/substr
+            // 명세에서 사라질 수도 있음
+            console.log(txt2.substr(8, 3));
+            console.log(txt2.substr(txt2.indexOf("C"), 3));
+
+            // 처음 것만 변경
+            // replace(바꿀문자열,바뀔문자열)
+            console.log(txt2.replace('CEO','cto'));
+
+            // 다른 부분도 변화시킬려면 정규표현식 사용
+            console.log(txt2.replace(/CEO/g, "cto"));
+            // console에서 replaceAll 사용 가능
+            console.log(txt2.replaceAll('CEO','cto'));
+
+            // 대소문자 변경
+            console.log(txt.toUpperCase());
+            console.log(txt.toLowerCase());
+
+            // includes를 통해 값을 찾으면 오해의 여지가 안생김
+            console.log(txt.includes("H"));
+            console.log(txt.includes("n"));
+
+            // split, trim
+            // split - 띄어쓰기 기준으로 잘라내기
+            console.log(txt2.split(" "));
+            console.log("010-1234-1234".split(""));
+
+            // trim() - 앞 뒤로 공백 생략
+            console.log("          abc");
+            console.log("          abc".trim());
+            console.log("          a b c".trim());
+            console.log("          a b c      ".trim());
+        </script>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        //string, 문자열
+
+        let txt = 'ABCDEFGHIJK';
+        let txt2 = "mom said 'hello world'";
+        // 이스케이프 문자 사용하여 특수 문자를 표현
+        let txt3 = "mom said \"hello world\"";
+        // 이스케이프 자주 사용 예시 (\n)
+        let txt4 = "a\nb\nc\nd\ne";
+        //(\t - tab)
+        let txt5 = "a\tbcde";
+        let txt6 = 10;
+        let txt7 = "10.1abc"
+        console.log(txt+txt);
+        // index[0] 부터 시작
+        console.log(txt[0]);
+        console.log(txt[4]+txt[5]+txt[6]);
+        console.log(txt2);
+        console.log(txt3);
+        console.log(txt4);
+        console.log(txt5);
+        // \t를 1개의 문자열로 처리함
+        console.log(txt5[1]);
+
+//         parseInt : 숫자와 문자가 포함된 문자열 "2022년도" 에서 숫자부분만 뽑아냄 (소수점 포함 x)
+//  Number : 숫자만 있는 문자열에서 소수점 포함 숫자부분을 뽑아냄
+        console.log(txt6 + txt6);
+        // 분석해서 정수로 바꾸는 느낌
+        console.log(parseInt(txt6)+ parseInt(txt6));
+        // 통째로 숫자형으로 바꿔버리려는 느낌
+        console.log(Number(txt6)+ Number(txt6));
+
+        console.log(parseFloat(txt7)+parseFloat(txt7));
+        console.log(parseFloat(txt6));
+        console.log(parseInt(txt7));
+
+
+        // 스트링의 메서드 (. 찍으면 나오는 것)
+        console.log(txt.length);
+        // 11개 글자지만 index 로는 length-1 (0-10)
+
+        console.log(txt.indexOf('E'));
+        // index가 반환
+        // indexOf는 정규표현식을 허용하지 않습니다.
+
+        console.log(txt.search('F'));
+        // index가 반환
+
+        // 
+        console.log(txt.indexOf("Z"));
+        console.log(txt.search("Z"));
+
+        // 정규표현식 사용
+        let regExp = /CD/;
+        console.log(txt.search(regExp));
+
+        
+        // slice, substr
+
+    </script>
+</body>
+</html>
