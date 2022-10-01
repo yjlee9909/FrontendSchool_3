@@ -1,0 +1,10 @@
+nav {
+  background: #C39BD3;
+}
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+nav ul li {
+  margin-right: 10px;
+}/*# sourceMappingURL=ex1.css.map */
