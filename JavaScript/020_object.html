@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        // Object
+
+        // 1. 기본형태
+        let newuser = {
+            // key: value
+            id : 'lee',
+            pw : '1234',
+            name : 'yoojin',
+            email : '123@123.com',
+            active : true,
+
+        }
+        console.log(newuser['id']);
+        console.log(newuser.id);
+
+        // 2.
+        let user = [{
+            // key: value
+            id : 'leee',
+            pw : '1234',
+            name : 'yoojin',
+            email : '123@123.com',
+            active : true,
+
+        },{
+            // key: value
+            id : 'lion',
+            pw : '2345',
+            name : 'yoojinlee',
+            email : '123@1sd23.com',
+            active : true,
+
+        }]
+        console.log(user[0]['id']);
+        // console.log(newuser[id]); //error
+        console.log(newuser.id);
+        // console.log(newuser, "id"); // error
+
+        //3. 아래와 같이 선언이 가능합니다.
+        let a = 10;
+        let b = 20;
+        let c = 30;
+        let e = {a,b,c};
+        console.log(e);
+
+        // let test = {
+        //     'one','two','three'
+        // }
+            //console.log(test);
+
+        // 4. 값을 변경할 수 있습니다.
+        e['a'] = 50;
+        console.log(e);
+
+        // 5. key 값으로 문자열 외에 다른 값을 넣었을 경우
+        let txt = 'hello';
+        let txt2 = {
+            0: 'h',
+            1: 'e',
+            22: 'l',
+            3: 'l',
+            4: 'o',
+            ex: 'q'
+        }
+
+        console.log(txt[1]);
+        console.log(txt2[22]); // 유사 배열 객체
+        console.log(txt2['ex']);
+
+        // console.log(txt2.1); // map으로 가능해짐 (비교적 최신 문법)
+        // 6. value 값으로 문자열 외에 다른 값을 넣었을 경우
+        let test = {
+            one: sum,
+            two : console.log,
+            three : window.innerWidth,
+            four : [10,20,30],
+            five : '10',
+            six : 100
+        }
+        console.log(test);
+        test.two('lee!!');
+
+        // 7. key와 value만 뽑아낼 수 없을까?
+        console.log(Object.keys(newuser));
+        console.log(Object.values(newuser));
+        // 쌍으로 뽑아내기
+        console.log(Object.entries(newuser));
+
+        // map에서 사용할 수 있습니다. (array.map과는 다름)
+        //newuser.keys();
+        // newuser.values();
+        // newuser.entries();
+
+        // object와 object.prototype의 차이 -> prototype은 object 명시 안함
+
+
+        // 8. (업뎃) object spread 용법 (object.asign대신)
+        // let newuser = {
+        //     // key: value
+        //     id : 'lee',
+        //     pw : '1234',
+        //     name : 'yoojin',
+        //     email : '123@123.com',
+        //     active : true
+        // }
+        let 회원정보업데이트 = {
+            name : 'cat',
+            email : '234@234.com',
+        }
+        // !!!!!!
+        // newuser['name'] = 회원정보업데이트['name'];
+        // newuser['email'] = 회원정보업데이트['email'];
+        // console.log(newuser);
+
+        // spread 용법
+
+        // ... 를 통한 새로운 친구들이 newuser에 할당됨
+        newuser = {...newuser, ...회원정보업데이트};
+        console.log(newuser);
+
+        // 이렇게 바꾸시면 2개 다 바뀝니다.
+        // let newuser2 = newuser;  // 서로 다른 애
+        // newuser2['id'] = 'helloworld';
+        // console.log(newuser2);
+        // console.log(newuser);
+        // 둘 다 helloworld 출력됨 newuser2 -> newuser1를 가리킴  (포스트잇 개념)
+
+        // 값을 펼친다.
+        let newuser2 = {...newuser};  // 서로 다른 애 spread 를 사용하면 원본을 만지지 않는다.
+        newuser2['id'] = 'helloworld';
+        console.log(newuser2);
+        console.log(newuser);
+
+        function sum(x, y) {
+            return x+y;
+        }
+        console.log(sum); //function의 기능 전체 출력
+        console.log(typeof sum); // function
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>헷갈리는 부분 정리</title>
+</head>
+<body>
+    <script>
+        console.log("---0----");
+        // true와 숫자값의 비교
+        console.log(true == 1); // == 타입 무시
+        console.log(false == 0); // true
+        console.log(true === 1); // f
+        console.log(false ===0 ); //f
+
+        console.log("---1----");
+        console.log(NaN == NaN); // false
+        // NaN만 자기자신이 자기자신이아닌 케이스 - 나중에 다시 설명예정
+        console.log(NaN === NaN); // false
+
+        console.log("----2----");
+        // true 일 것 같은 혼란스러운 녀석들
+        console.log(false == null); // f
+        console.log(false == NaN);
+        console.log(false == undefined); //f
+
+        console.log("----3----");
+        // + 연산자를 이용한 형변환 (+ 붙으면 숫자형으로 형변환)
+        console.log(+false); //0
+        console.log(+true); //1
+        // console.log(-false);
+        console.log(false * 1); //0
+        console.log(true * 1); //1
+        console.log(1 + ""); // 1 // 검은색 : string
+        console.log(NaN + ""); // NaN
+        console.log(Infinity + ""); //Infinity
+        console.log(true + ""); //t
+        console.log(false + ""); //f
+        console.log(""+1);// string
+        console.log(+"100" + 10); // 숫자로 변환된 후 +10 연산
+
+        console.log("2"+"2"-"2"); // 20
+        // + 연산자는 문자를 붙임 - 연산자는 수학적 연산으로 Number로 던져줌
+    </script>
+</body>
+</html>
