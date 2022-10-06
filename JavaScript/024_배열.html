@@ -208,7 +208,17 @@
         // 2 - 9 -> 음수 -> 2 9 10 13
         // compare 함수를 sort의 인자로 넣어줘야 숫자 정렬이 된다.
 
-        // 
+        //  원본을 만지지 않고 싶은 경우
+
+        // spread를 사용하여 펼침
+        const arrNum_test = [13, 9, 10, 2];
+        [...arrNum_test].sort();
+
+        // console.log(arrNum_test);  // [ 13, 9, 19, 2 ]
+console.log(test2);  //  [ 13, 19, 2, 9 ]
+
+// 에러 없ㅇ 작동되는 코드
+
     </script>
 </body>
 </html>

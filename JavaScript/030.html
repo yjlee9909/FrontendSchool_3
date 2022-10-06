@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var를 사용한다면??</title>
+</head>
+<body>
+    <script src="a.js"></script>
+    <script src="b.js"></script>
+    <script>
+        // var -> 같은 변수명일 경우에
+        console.log(변수); // 50 출력
+        console.log(함수(50,5));
+        // 250 // b.js가 출력됨
+        // 순차적으로 읽으면서 덮어 씌워짐
+        // 2개의 파일이 영향을 끼친다!!!
+
+        // let 사용되면 덮어씌워지지 않는다. (에러 발생)
+        // 견고한 코딩을 위해 var가 아닌 let, const를 사용한다.
+    </script>
+</body>
+</html>
+
