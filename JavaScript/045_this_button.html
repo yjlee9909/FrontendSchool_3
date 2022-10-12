@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+
+    </title>
+</head>
+<body>
+    <button id="btn1">클릭1</button>
+    <button id="btn2">클릭2</button>
+    <script>
+        let test = {
+            one:1,
+            two:2,
+            three: function() {
+                console.log(this); // this 는 test
+            }
+        };
+        let test2 = test1.three;
+
+        let btn1 = document.getElementById('btn1');
+        btn1.addEventListener("click", test1.three);
+        let btn2 = document.getElementById('btn2');
+        btn2.addEventListener("click", test2); // 버튼 자신을 호출함
+
+        // 호출한 방법에 의해 this는 결정됨
+        // bind -> 무조건 얘를 가리켜라!!!가 도입됨
+    </script>
+</body>
+</html>
