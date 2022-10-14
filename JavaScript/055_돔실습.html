@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습</title>
+    <style>
+        .canvas {
+            width: 500px;
+            height: 500px;
+            background-color: black;
+            margin: 0 auto;
+        }
+        ul {
+            display: flex;
+            justify-content: space-around;
+        }
+        .canvas.red {
+            background-color: red;
+        }
+        .canvas.yellow {
+            background-color: yellow;
+        }
+        .canvas.green {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="canvas"></div>
+    <ul>
+        <li><button type="button" class="btn-red">빨강</button></li>
+        <li><button type="button" class="btn-yellow">노랑</button></li>
+        <li><button type="button" class="btn-green">초록</button></li>
+    </ul>
+    
+    <script>
+        // 일단 재료 변수에 담기, 돔으로 찾고 저장 반복
+        const canvas = document.querySelector('.canvas');
+        const btnRed = document.querySelector('.btn-red');
+        const btnYellow = document.querySelector('.btn-yellow');
+        const btnGreen = document.querySelector('.btn-green');
+
+        // 이벤트 타입, 리스터 함수()
+        // btnRed.addEventListener('click', () =>  {
+        //     canvas.classList.remove('red', 'yellow', 'green');
+        //     // 클래스 다 지원도 괜찮음 뒤에 add로 추가하므로
+        //     canvas.classList.add('red');
+        // });
+        // btnYellow.addEventListener('click', () =>  {
+        //     canvas.classList.remove('red', 'yellow', 'green');
+        //     canvas.classList.add('yellow');
+        // });
+        // btnGreen.addEventListener('click', () =>  {
+        //     canvas.classList.remove('red', 'yellow', 'green');
+        //     canvas.classList.add('green');
+        // });
+
+        // 다른걸 다시 누르면 안됨,,, 나머지 클래스 제거해줘야 함
+
+        // 반복됨......!!!! -> 하나로 만들어보기!!
+
+        const btnArr = [btnRed, btnYellow, btnGreen];
+
+        // 순환하면서 이벤트 리스터 붙여주기
+        /*
+        for (let i = 0; i < btnArr.length; i ++) {
+            
+        }
+        */
+        btnArr.forEach(item => {
+            item.addEventListener('click', () => {
+                canvas.classList.remove('red', 'yellow', 'green');
+                if(item.classList.contains("btn-red")) {
+                    // btn-red 가 true (눌렀을 경우)
+                    canvas.classList.add('red');
+                } else if (item.classList.contains("btn-yellow")) {
+                    canvas.classList.add('yellow');
+                } else if (item.classList.contains("btn-green")) {
+                    canvas.classList.add('green');
+                }
+            })
+        })
+    </script>
+</body>
+</html>
+

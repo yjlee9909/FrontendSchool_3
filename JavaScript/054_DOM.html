@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <!-- <div id="myDiv">div</div>
+    <div id="myDiv">div</div>
+    <div id="myDiv">div</div>
+    <div id="myDiv">div</div>
+    <div id="myDiv">div</div> -->
+    <!-- <div class="myDiv">div</div>
+    <div class="myDiv">div</div>
+    <div class="myDiv">div</div>
+    <div class="myDiv">div</div>
+    <div class="myDiv">div</div> -->
+
+    점심 식단
+    <article id="container">
+        <ul>
+            <li>탕수육</li>
+            <li class="item-second">유산슬</li>
+            <li>짜장면</li>
+        </ul>
+    </article>
+
+    저녁 식단
+    <article>
+        <ul>
+            <li>된장국</li>
+            <li class="item-second">김치찌게</li>
+            <li>해장국</li>
+        </ul>
+    </article>
+
+    <!-- <button>Hello!</button> -->
+    <button>Make me BLUE!</button>
+    <script>
+        // id로 접근하는 방법
+        //console.log(document.getElementById('myDiv'));
+        // 할당!!!!!
+        //const myDiv = document.getElementById('myDiv');
+        // 바로 myDiv만 가지고 작업하면 됨
+
+        // 모든 요소 가져오기
+        //console.log(document.getElementsByTagName('div'));
+
+        // 클래스로 
+        //console.log(document.getElementsByClassName('myDiv'));
+
+        // 첫번째 item-second와 첫번째 li를 콘솔로 출력해보기!!
+        console.log(document.getElementsByClassName('item-second')[0]);
+        console.log(document.getElementsByTagName('li')[0]);
+
+        // 자바스크립트 최적화 (요소 찾을때 기준점을 기준으로 찾게되어 속도가 빠르다!!! -> 반드시 document 부터 시작할 필요가 없다.)
+        const container = document.getElementById('container');
+        console.log(container.getElementsByClassName('item-second')[0]);
+        console.log(container.getElementsByTagName('li')[0]);
+
+
+        // css 선택자로 접근하기!!!!!!!!! 쿼리셀렉터 -> 1개만 찾음 (구조상 첫 번째)
+        console.log(document.querySelector('.item-second')); // item-second라는 클래스 접근하기
+        // id는 #으로 사용!
+        // n 번째 접근 해볼려면 쿼리셀렉터 올
+        console.log(document.querySelectorAll('li'));
+        console.log(document.querySelectorAll('li')[3]);
+
+
+        // 이벤트 삽입
+        // target -> 이벤트 삽입할 요소
+        // 이벤트의 타입에는 click, mouseover, mouseout, wheel 등 다양한 이벤트를 감지합니다.
+        // listener 함수의 인수에는 이벤트에 대한 정보가 담겨있습니다.
+
+        // const myBtn = document.querySelector("button");
+
+        // myBtn.addEventListener('click', function(){
+        //     console.log("hello world");
+        // })
+
+        // onClick="" 보다 addEventListener를 추천!
+        // -> 유지보수성, html과 js 분리가 안되므로 유지보수가 어렵다
+
+
+        // 클래스 제어 (굉장히 많이 사용!!!)
+        const myBtn = document.querySelector("button");
+
+        myBtn.addEventListener('click', function(){
+
+        // blue 라는 클래스의 속성 값을 지정 할 수 있습니다.
+            // blue라는 클래스를 myBtn에 추가합니다.
+            //myBtn.classList.add("blue");
+
+            // myBtn.classList.remove("blue");     클래스를 제거합니다.
+            myBtn.classList.toggle("blue");     //클래스를 토글합니다. 없으면 넣어주고, 있으면 제거합니다.
+            // -> 눌렀을 때마다 상태가 바뀐다면 add, remove 대신에 toggle 사용 (스타일 변경시에 주로 사용)
+            // myBtn.classList.contains("blue");   해당하는 클래스가 있는지 확인합니다.
+            // contains 있으면 이런 스타일, 없으면 저런 스타일
+            // contains는 반환값을 불리언!!!! 값으로 반환
+        })
+    </script>
+</body>
+</html>
