@@ -17,28 +17,39 @@
             const memo = [];
             memo.push("메모1");
             memo.push("메모2");
+            // ['메모1', '메모2']
             localStorage.setItem("메모", memo);
+            // 메모 |	메모1,메모2
 
             const memo2 = {};
             memo2["one"] = "메모1";
             memo2["two"] = "메모2";
+            // {"one":"메모1","two":"메모2"}
             // 저장하실 때 문자열로 변환해서 저장하셔야 합니다.
             localStorage.setItem("메모2", memo2);
+            // 메모2	[object Object]
 
             console.log(localStorage.getItem("메모"));
             console.log(localStorage.getItem("메모").split(","));
+            // ['메모1', '메모2']
 
             localStorage.setItem("one", "하나");
+            // one	하나
             localStorage.setItem("two", "둘");
+            // two	둘
             console.log(localStorage.getItem("one"));
+            // 하나
             console.log(localStorage.getItem("two"));
+            // 둘
 
             const memo3 = {};
             memo3["one"] = "메모1";
             memo3["two"] = "메모2";
+            // {one: '메모1', two: '메모2'}
             console.log(JSON.stringify(memo3));
             // 저장하실 때 문자열로 변환해서 저장하셔야 합니다.
             localStorage.setItem("메모3", JSON.stringify(memo3));
+            // 메모3	{"one":"메모1","two":"메모2"}
             console.log(localStorage.getItem("메모3"));
             console.log(JSON.parse(localStorage.getItem("메모3")));
         </script>
