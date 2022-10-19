@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <article class="parent">
+        <ol>
+            <li><button class="btn-first" type="button">버튼1</button></li>
+            <li><button type="button">버튼2</button></li>
+            <li><button type="button">버튼3</button></li>
+        </ol>
+    </article>
+    
+    <script>
+        // this는 이벤트가 연결된 대상이다
+        // console.log(event.currentTarget) 와 동일하다
+
+        // 화살표 함수로 사용하면 this가 가리키는 대상이 달라짐!!!!!!!!
+        // window
+        // 자신을 둘러 싸고 있는 외부 환경의 this 값을 참조
+        const parent = document.querySelector('.parent');
+        parent.addEventListener('click', function (event) {
+            // 이벤트 리스너 안의 this 값은 currentTarget와 같습니다.
+            // function인 경우에 this는 이벤트가 연결된 부분을 가리킴
+            console.log(this);
+        })
+    </script>
+</body>
+</html>

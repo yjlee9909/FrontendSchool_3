@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>나의 todo list</h1>
+    <p>1. 오늘 저녁에는 부대찌게를 끓여 먹겠다.<button type="button">삭제</button></p>
+    <p>2. 후식으로 슈팅스타를 먹겠다.<button type="button">삭제</button></p>
+    <p>3. 자기 전에 반드시 내일 아침 메뉴를 생각해두겠다.<button type="button">삭제</button></p>
+
+    <script>
+        // my code
+        // const tagP = document.querySelector('p');
+        // tagP.addEventListener('click', () => {
+        //     alert(`${tagP.textContent}`)
+        // })
+        // const delbtn = document.querySelector('button');
+        // delbtn.addEventListener('click', () => {
+        //     confirm('삭제하시겠습니까?');
+        //     event.stopPropagation();
+        //     tagP.remove();
+        // })
+
+        const txts = document.querySelectorAll('p');
+        const btns = document.querySelectorAll('button');
+
+        // nodelist 순환
+        // forEach
+        // for of -> 브라우저 호환성의 문제 (IE 미지원)
+
+        // for (const item of txts) {
+        //     item.addEventListener('click', () => {
+        //         //alert(event.target.textContent.slice(0, -2));
+        //         // 자식 제거하기
+        //         alert(item.textContent.slice(0, -2));
+        //     })
+        // }
+
+        
+        // txts.forEach(item => {
+        //     item.addEventListener('click', () => {
+        //     //alert(event.target.textContent.slice(0, -2));
+        //     // 자식 제거하기
+        //         alert(item.textContent.slice(0, -2));
+        //     })
+        // })
+
+        // forEach -> 배열에 사용
+        // txts -> 노드리스트.... forEach 되는 이유는? -> 따로 forEach가 존재함 (배열문의 것과는 다름)
+        // 노드리스트의 forEach 는 IE 미지원!!
+        // call 함수를 통해서 메서드를 빌려온다.
+
+        // 수정하기 call 역할 : 메서드의 호출 객체를 변경 this를 지정
+        Array.prototype.forEach.call(txts, (item) => {
+            item.addEventListener('click', () => {
+            alert(event.target.textContent.slice(0, -2));
+            // 자식 제거하기
+                //alert(item.textContent.slice(0, -2));
+            })
+        })
+
+        // 삭제하기
+        for(const item of btns) {
+            item.addEventListener('click', () => {
+                // 확인 / 취소 누른 값이 반환됨
+                const result = confirm('삭제 하시겠습니까?');
+                // 버블링을 통해 부모 p 태그가 실행됨 -> 부모의 event.target은 btn이 들어감 -> btn.textContent 는 빈 값 출력
+                // 버블링 끊어버리기
+                event.stopPropagation();
+                if(result) {
+                    item.parentElement.remove();
+                }
+                
+
+            })
+        }
+
+    </script>
+</body>
+</html>

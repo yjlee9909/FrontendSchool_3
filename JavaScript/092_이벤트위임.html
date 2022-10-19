@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <article class="parent">
+        <ol>
+            <li><button class="btn-first" type="button">버튼1</button></li>
+            <li><button type="button">버튼2</button></li>
+            <li><button type="button">버튼3</button></li>
+        </ol>
+    </article>
+
+    <script>
+        const parent = document.querySelector('.parent');
+
+        // 이벤트 위임이 없다면 버튼을 일일이 찾아서 하나씩 이벤트 리스너를 달아줘야함
+        // 부모로부터 이벤트 위임해주는게 더 좋다.... 모든 버튼에 이벤트 달아주기 어렵
+        // 부모 안에 특정 요소 선택했을때(라는 조건을 달아주면 됨-요소 이름 대문자로)
+        parent.addEventListener('click', function (event) {
+            console.log(event.target);
+            // 클릭한 요소가 BUTTON이면 안에 내용을 버튼4로 변경
+            if (event.target.nodeName === "BUTTON") {
+                event.target.innerText = "버튼4";
+                // 그저 전달하려는 내용이 텍스트이므로 .innerHTML도 상관없음
+            }
+        })
+    </script>
+</body>
+
+</html>

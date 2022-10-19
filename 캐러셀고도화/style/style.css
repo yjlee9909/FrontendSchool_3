@@ -1,0 +1,72 @@
+@charset 'utf-8';
+/* css 한글 주석이 꺠지는 경우가 있음!! */
+
+#app {
+    width: 100vw;
+    height: 100vh;
+    /* 직계자식만 적용됨 
+    컨테이너에 perspective에 부여
+    손자들에게까지 원근감 적용하려면 preserve-3d 부여한다.*/
+    perspective: 1600px;
+}
+
+.list-item {
+    position: fixed;
+    width: 340px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    /* 알아서 절반만큼 움직임 */
+    /* margin: -200px 0 0 -170px; */
+    transform: translate(-50%, -50%) rotateY(0deg);
+
+    /* 각도가 바뀔때 0.3초 정도로 바뀜을 줘서 부드럽게 이동하는 모습을 보여줌 */
+    transition: .3s;
+
+    /* list까지 원근감 적용시키기 */
+    transform-style: preserve-3d;
+}
+.list-item li {
+    position: absolute;
+    top:0;
+    left: 0;
+    /* 부모 list-item 만큼 넓이와 높이 조절 */
+    width: 100%;
+    height: 100%;
+
+    /* 뒤로 도는 경우 안보이게 함 */
+    backface-visibility: hidden;
+}
+.list-item li img {
+    width: 100%;
+    height: 100%;
+    /* 이미지 비율 맞추기
+    백그라운드 사이즈와 똑같음 이미지가 짤리지 않는 상태에서 최대한으로 */
+    object-fit: contain;
+}
+
+/*
+.list-item li:nth-child(1) {
+    /* 한번 더 주석 1번째는 회전필요없음 */
+    /* 한번 더 주석 translateZ값 -> ul 기준 회전하는 값 (원근감) (중심축 까지의 거리) */
+    /* transform: rotateY(0) translateZ(calc(340px*7/3.14/2)); */
+/* } */
+/* .list-item li:nth-child(2) {
+    transform: rotateY(calc(360deg/7)) translateZ(calc(340px*7/3.14/2));
+}
+.list-item li:nth-child(3) {
+    transform: rotateY(calc(360deg/7*2)) translateZ(calc(340px*7/3.14/2));
+}
+.list-item li:nth-child(4) {
+    transform: rotateY(calc(360deg/7*3)) translateZ(calc(340px*7/3.14/2));
+}
+.list-item li:nth-child(5) {
+    transform: rotateY(calc(360deg/7*4)) translateZ(calc(340px*7/3.14/2));
+}
+.list-item li:nth-child(6) {
+    transform: rotateY(calc(360deg/7*5)) translateZ(calc(340px*7/3.14/2));
+}
+.list-item li:nth-child(7) {
+    transform: rotateY(calc(360deg/7*6)) translateZ(calc(340px*7/3.14/2));
+}
+*/ 

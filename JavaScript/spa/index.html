@@ -1,0 +1,152 @@
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>위니브 스토어</title>
+        <link
+            href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link rel="stylesheet" href="src/style/style.css" />
+    </head>
+
+    <body>
+        <div id="root">
+            <!-- <h1 class="ir">상품목록</h1>
+            <ul class="product-list"></ul> -->
+        </div>
+        <script>
+            const root = document.getElementById('root');
+
+            // 통일성을 헤침
+            // async await를 사용했으면 아래 코드도 async await을 사용하는게 좋다
+            // getProductData() 는 프로미스 async 붙어서
+            async function getProductData() {
+                const response = await fetch('http://test.api.weniv.co.kr/mall');
+                // fetch는 프로미스 반환 -> 기다려야 값 전달 -> await
+                const product = response.json();
+                // json값으로 넘어감
+                return product
+            }
+            // return 값은 json 데이터들
+            // getProductData().then().then().catch() 형식으로 (프로미스여서)
+            getProductData()
+            .then(
+                product => {
+                    // console.log(product);
+                    // 1. createElement 한 경우
+                    const mainElement = document.createElement('main');
+                    mainElement.classList.add('product');
+                    // console.log(mainElement)
+                    // product css 코딩
+
+                    // createElement 하면 길어질 것 같아서 innerHTML로
+                    // 통일성을 헤침 innerHTML로 했으면 끝까지 innerHTML
+                    // DOM 컨트롤로 처음부터 했으면 끝까지 DOM 컨트롤로
+                    // 2. createElement 하지 않고 바로 태그 생성한 경우
+                    mainElement.innerHTML = `
+                        <h1 class="ir">상품목록</h1>
+                        <ul class="product-list"></ul>
+                    `;
+                    // console.log(mainElement)
+                    // 위에 내용 가져오기 위해 querySelector 불러야함 createElement 하면 변수명만 가져오면 됨
+                    const productList = mainElement.querySelector('product-list')
+                    product.forEach(item => {
+                        // console.log(item)
+                        const productDetailLink = document.createElement('a');
+                        productDetailLink.href = `/detail/${item.id}`
+                        // console.log(productDetailLink)
+                        productDetailLink.innerHTML = `
+                        <li>
+                            <div>${item.thumbnailImg}</div>    
+                            <div>${item.productName}</div>    
+                            <div>${item.price}</div>    
+                        </li>
+                        `;
+                        // console.log(productDetailLink)
+                        productList.append(productDetailLink);
+                    });
+                    console.log(mainElement)
+                }
+            ).then().catch()
+        </script>
+    </body>
+</html>
+
+<!-- <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>위니브 스토어</title>
+        <link
+            href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link rel="stylesheet" href="src/style/style.css" />
+    </head>
+
+    <body>
+        <div id="root"></div>
+        <script>
+            const root = document.getElementById("root");
+
+            // 통일성을 해친겁니다.
+            // async await을 사용하셨으면 아래 코드도 async await을 사용하시는 것이 좋겠죠?
+            async function getProductData() {
+                const response = await fetch(
+                    "http://test.api.weniv.co.kr/mall"
+                );
+                const product = response.json();
+                return product;
+            }
+
+            getProductData()
+                .then((product) => {
+                    // console.log(product);
+                    const mainElement = document.createElement("main");
+                    mainElement.classList.add("product");
+                    // console.log(mainElement);
+
+                    // 통일성을 해친겁니다.
+                    // innerHTML로 처음부터 했으면 끝까지 innerHTML로
+                    // DOM 컨트롤로 처음부터 했으면 끝까지 DOM 컨트롤로
+                    mainElement.innerHTML = `
+                        <h1 class="ir">상품목록</h1>
+                        <ul class="product-list"></ul>
+                    `;
+                    // console.log(mainElement);
+
+                    const productList =
+                        mainElement.querySelector(".product-list");
+                    product.forEach((item) => {
+                        // console.log(item);
+                        const productDetailLink = document.createElement("a");
+                        productDetailLink.href = `/detail/${item.id}`;
+                        productDetailLink.innerHTML = `
+                            <li>
+                                <div>${item.thumbnailImg}</div>
+                                <div>${item.productName}</div>
+                                <div>${item.price}</div>
+                            </li>
+                            `;
+                        // console.log(productDetailLink);
+                        productList.append(productDetailLink);
+                    });
+                    console.log(mainElement);
+                    const cart = document.createElement("a");
+                    cart.setAttribute("class", "link-btn cart-link");
+                    mainElement.append(cart);
+
+                    // console.log(productList)
+                    // console.log(mainElement)
+                    root.append(mainElement);
+                })
+                .then()
+                .catch();
+        </script>
+    </body>
+</html> -->

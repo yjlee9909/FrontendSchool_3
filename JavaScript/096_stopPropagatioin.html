@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <form action="">
+        <button type="submit" class="submit">제출</button>
+    </form>
+    
+    <script>
+        const submit = document.querySelector('.submit');
+        submit.addEventListener('click', (event) => {
+            console.log('clicked');
+            // 기본 동작 막기 - 새로고침 -> 그치만 이벤트는 계속 전파됨
+            event.preventDefault();
+            // 이벤트 전파 차단 (부모로 올라가는 것 - body 버블링 이벤트 실행 안됨)
+            //event.stopPropagation();
+            // "clicked"만 출력됨
+        });
+        // submit 이벤트 끝나면서 버블링 이벤트 시작(다시 올라가면서) 부모 요소에 있는 버블링 요소 시작
+
+        // body 태그로 접근 바로 가능 (프로퍼티)
+        document.body.addEventListener('click', () => {
+            console.log('event still alive!');
+        });
+        // true 를 사용한다면 event still alive , clikced 순으로 실행됨
+        // true로 인해 위의 코드가 캡쳐링 이벤트 (이벤트 원점 찾아 가면서 실행)
+        // 캡쳐링 이벤트가 먼저 실행됨
+    </script>
+</body>
+</html>

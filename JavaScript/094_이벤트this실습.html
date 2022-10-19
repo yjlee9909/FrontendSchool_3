@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <button>버튼입니다.</button>
+    <script>
+        // 화살표 함수 안의 this는 자신을 둘러싸고 있는 외부 환경을 가리킵니다.
+        const btn = document.querySelector('button');
+        // 메서드 안 this는 자신을 호출한 것을 가리킴
+        const myObj = {
+            name : 'test',
+            // ES6 에서는 myFunc : 생략 가능
+            test() {
+                btn.addEventListener('click', (event) => {
+                    // myObj를 가리킴
+                    console.log(this);
+                    // {name: 'test', test: ƒ}
+                    console.log(this.name);
+                    // test
+                })
+            }
+        }
+
+        myObj.test();
+        
+    </script>
+</body>
+</html>
