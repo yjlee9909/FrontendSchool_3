@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        // const me = {
+        //     name : '웨이드',
+        //     address : '제주도 제주시 인다 1길',
+        //     phoneNum : '010-8001-6536',
+        //     canWalk : function(){
+        //         console.log('웨이드가 걷는다.');
+        //     },
+        //     teaching : function(student){
+        //         student.levelUp();
+        //     }
+        // }
+        // const student = {
+        // level: 1,
+        // levelUp : function(){
+        //     this.level++; // 메서드 안 this는 자신을 호출한 애를 가리킴 (student의 this)
+        // }
+        // }
+        // me.teaching(student);
+
+        ///// 실습 - 나 자신을 추상화 해보기
+        const me = {
+            name : 'yj',
+            address : '경기도 000',
+            learning : function(teacher) {
+                console.log("hi")
+                teacher.feelingUp();
+            }
+        }
+        const teacher = {
+            feeling: 99,
+            feelingUp : function() {
+                this.feeling++;
+            }
+        }
+        me.learning(teacher);
+    </script>
+</body>
+</html>

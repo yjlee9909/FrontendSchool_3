@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+
+        const obj = {
+        name: 'test'
+        }
+
+        console.log(obj.hasOwnProperty('name'));
+
+        const arr = [1,2,3];
+
+        console.log(arr.hasOwnProperty('name')); // false
+        // undefined가 아닌 false인 이유 -> array의 
+
+        console.log('12345'.length)
+        const str = new String('12345');
+
+        str.__proto__ // 생성자 함수 프로토타입
+        str.__proto__ === String.prototype // true
+
+        str.__proto__.__proto__ === Object.prototype // true
+
+        // call -> this 대상자 변경!!!!!!! this -> Child 생성자 함숫가 만드는 인스턴스를 가리키는데
+        // 그 this를 Parent 생서앚 함수 this를 바라보게 연결!!
+
+        function Parent() {
+            this.name = 'Lee';
+        }
+        Parent.prototype.rename = function (name) {
+            this.name = name;
+        }
+        Parent.prototype.sayName = function () {
+            console.log(this.name);
+        }
+        
+        function Child() {
+            Parent.call(this);
+        }
+
+        Child.prototype = Object.create(Parent.prototype);
+        Child.prototype.canWalk = function () {
+            console.log('now i can walk!!');
+        }
+
+        const child = new Child();
+        child.name; // Parent의 프로퍼티 사용 -> Lee
+        child.rename('hihi');
+        child.sayName();
+
+        // 나름의 생성자도역시 Object 생성자를 상속받게 된다.
+        // Object는 아무것도 참조하지 않음 !!! 최상위 객체!!!!!!
+    </script>
+</body>
+</html>

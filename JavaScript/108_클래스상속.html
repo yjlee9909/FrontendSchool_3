@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        class Robot {
+            constructor(name) {
+                this.name = name;
+            }
+
+            // 메소드를 정의합니다. 메소드는 클래스가 생성한 인스턴스를 통해 사용할 수 있습니다.
+            sayYourName() {
+                console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+            }
+        }
+
+        class BabyRobot extends Robot {
+            constructor(name) {
+                // super 반드시 호출해야함 constructor 함수가 없을 경우 자동 super 호출
+                super(name);
+                this.ownName = '아이크';
+            }
+
+            sayBabyName() {
+                        // 또한 상속을 받게되면 부모 클래스의 메소드를 사용할 수 있게 됩니다. 때문에 this로 접근 할 수 있습니다.
+                this.sayYourName();
+                console.log('Suceeding you, Father!');
+            }
+        }
+        const babyRobot = new BabyRobot('김김김');
+        console.log(babyRobot);
+        console.log(babyRobot.ownName);
+        // 부모 프로퍼티 상속받음 13줄
+        console.log(babyRobot.name);
+        console.log(babyRobot.sayYourName());
+        console.log(babyRobot.sayBabyName());
+    </script>
+</body>
+</html>

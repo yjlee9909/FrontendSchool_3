@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        // 생성자 함수는 대문자로 시작해야 함
+        // function Factory() {};
+        // const obj = new Factory(); // new 통해 객체 생성하여 obj에 할당
+        // console.log(obj)
+
+
+        //// 객체 만들어보기!!
+        function NewFactory(name){
+            // this는 robot1을 가리킴 (인스턴스 참조) (robot1이 사용할 수 있도록 연결)
+        this.name = name;
+        this.sayYourName = function(){
+            console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+        }
+    }
+    let robot1 = new NewFactory('브랜든'); // robot1에 들어가는건 인스턴스가 들어감
+    console.log(robot1.sayYourName());
+    let robot2 = new NewFactory('zzzfzfzf');
+    console.log(robot2.sayYourName());
+
+    robot2.name = 'he'
+    robot2.name
+    robot1.name // 서로 다르기 때문에 독립적인 객체를 생성할 수 있다.
+
+
+        ///// 실습
+        function FoodFactory(foodList) {
+            this.food = foodList;
+            const pickFood = foodList[Math.floor(Math.random() * foodList.length)] // 0 ~ length 미만
+            this.foodName = function() {
+                console.log(`랜덤 메뉴는 ${pickFood}입니다.`);
+            }
+        }
+        const foodList = ['짜장면','짬뽕','탕수육','냉짬뽕','간짜장'];
+        let robot3 = new FoodFactory(foodList);
+        console.log(robot3.foodName());
+
+        
+    </script>
+</body>
+</html>
