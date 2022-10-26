@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .target {
+            width: 50px;
+            height: 50px;
+            background-color: deepskyblue;
+            /* 부드럽게 효과 주기 */
+            transition: .3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="target"></div>
+    <script>
+        const target = document.querySelector('.target');
+        let pos = 0;
+
+        document.addEventListener('keydown', move);
+
+        function move(event) {
+            const keyName = event.key;
+            // console.log(keyName);
+            if (keyName === 'ArrowRight') {
+                pos += 5;
+                // 부드럽게 이동 (눈에 보이게)
+                target.style.transform = `translateX(${pos}px)`;
+            }
+            if (keyName === 'ArrowLeft') {
+                pos -= 5;
+                target.style.transform = `translateX(${pos}px)`;
+            }
+        }
+
+        /// 광클의 불편함.... 반응속도가 느림!!!! window.requestAnimationFrame()
+        
+    </script>
+</body>
+</html>

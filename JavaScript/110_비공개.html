@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        class Robot {
+            // 비공개 프로퍼티 선언
+            #password
+
+            constructor(name, pw) {
+                this.name = name;
+                this.#password = pw;
+            }
+
+
+            sayYourName() {
+                console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+            }
+
+            // 원하는 프로퍼티 값 가져오기
+            getPassword() {
+                return this.#password
+            }
+
+            // 수정하기
+            setPassword(pw) {
+                this.#password = pw;
+            }
+        }
+        const robot = new Robot('hee', '1234');
+        console.log(robot.name);
+        // Private field로 접근 불가능
+        // console.log(robot.#password);
+        console.log(robot.getPassword());
+        console.log(robot.setPassword('1111'));
+        console.log(robot.getPassword());
+        // 비공개 프로퍼티에 접근하는 메서드 만들어야함!!!
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        class Robot {
+            #password
+
+            constructor(name, pw) {
+                this.name = name;
+                this.#password = pw;
+            }
+
+
+            sayYourName() {
+                console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+            }
+
+            get password() {
+                return this.#password
+            }
+
+            set password(pw) {
+                this.#password = pw;
+            }
+        }
+
+        const bot = new Robot('재현', 1234);
+        // get, set으로 바로 접근 가능해서 유용하지 않다.... 비공개 프로퍼티에 비추천
+        console.log(bot.password);
+        // 값에 할당하듯이 사용한다. set
+        console.log(bot.password = 1313);
+
+        // 프로퍼티를 함수를 통해 가공해야하는 경우 사용하면 편리!!
+    </script>
+</body>
+</html>

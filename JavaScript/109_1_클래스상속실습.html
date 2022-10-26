@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        class 소시지 {
+            // 자동 실행 함수
+            constructor(el1, el2){
+                // 인스턴스 연결
+                this.inside1 = el1;
+                this.inside2 = el2;
+            };
+            taste() {
+                console.log(`${this.inside1}와 ${this.inside2} 맛이 난다!`);
+            }
+        }
+        const one = new 소시지('소고기', '파');
+        console.log(one.taste());
+
+        class FireSausage extends 소시지 {
+            // constructor 안쓰면 위의 것을 상속받음
+            constructor(el1, el2, el3) {
+                super(el1, el2); // 가져오기, 부모 constructor의 el1, el2 전달해서 실행한것과 같은 결과 가져옴
+                this.inside3 = el3;
+            }
+            // 재정의하기
+            taste() {
+                console.log(`${this.inside1}와 ${this.inside2} 맛, ${this.inside3} 맛이 난다!`);
+            }
+
+        }
+        const two = new FireSausage('돼지고기', '양파', '불맛');
+        console.log(two.taste());
+    </script>
+</body>
+</html>

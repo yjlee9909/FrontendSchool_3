@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        function Parent() {
+            this.name = '재현';
+        }
+        Parent.prototype.rename = function (name) {
+            this.name = name;
+        }
+        Parent.prototype.sayName = function () {
+            console.log(this.name);
+        }
+        function Child() {
+            Parent.call(this);
+        }
+
+        Child.prototype = Object.create(Parent.prototype);
+
+        /// constructor까지 추가해서 명시적으로 나타내기
+
+        Child.prototype = Object.create(Parent.prototype, 
+        // 프로퍼티 서술자 객체
+        // 내장속성을 설정할 수도 있습니다.
+        
+        {
+            constructor: {
+                // 프로퍼티 변경이 가능한가?
+                configurable: true,
+                // 열거가능한가??
+                emmurable: true,
+                // .....
+                writable: true,
+                value: Child
+
+            }
+        });
+        Child.prototype.canWalk = function () {
+            console.log('now i can walk!!');
+        }
+        const child = new Child();
+        console.log(child); // name : '재현'
+        console.log(child.__proto__ === Child.prototype) // true
+
+
+        
+        function Test() {
+
+
+        }
+
+        const test = new Test();
+    </script>
+</body>
+</html>
