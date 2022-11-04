@@ -6,8 +6,8 @@ class ColaGenerator {
     }
 
     // 메소드 실행시키는 함수
-    setup() {
-        this.loadData((json) => {
+    async setup() {
+        await this.loadData((json) => {
             this.colaFactory(json);
         });
     }
