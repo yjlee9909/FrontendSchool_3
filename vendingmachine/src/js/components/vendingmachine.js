@@ -168,6 +168,7 @@ class Vendingmachine {
                     this.gotList.appendChild(itemStaged);
                 }
             }
+            isGot = false;
 
             // stagedList 목록의 내용을 초기화
             this.stagedList.innerHTML = null;
