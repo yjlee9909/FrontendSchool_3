@@ -13,4 +13,16 @@
         <script>
             $("#btn_data").click(function () {
                 //$.ajax({경로, 동기화 여부, 성공하면 할 일})
-                //$.ajax({url:'경로', async: true, succe
+                //$.ajax({url:'경로', async: true, success:function(result){}})
+                $.ajax({
+                    url: "http://test.api.weniv.co.kr/mall",
+                    async: true, 
+                    dataType: 'JSON', 
+                    success: function (result) {
+                        $("#data").text(result);
+                    },
+                });
+            });
+        </script>
+    </body>
+</html>

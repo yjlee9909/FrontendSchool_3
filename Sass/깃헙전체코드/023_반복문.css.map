@@ -1,1 +1,12 @@
-{"version":3,"sources":["023_%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A9%E1%86%A8%E1%84%86%E1%85%AE%E1%86%AB.scss","023_%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A9%E1%86%A8%E1%84%86%E1%85%AE%E1%86%AB.css"],"names":[],"mappings":"AAOI;EACE,qBAAA;EACA,eAAA;ACNN;;ADII;EACE,qBAAA;EACA,eAAA;ACDN;;ADDI;EACE,qBAAA;EACA,eAAA;ACIN;;ADNI;EACE,qBAAA;EACA,eAAA;ACSN;;ADXI;EACE,qBAAA;EACA,eAAA;ACcN","file":"023_반복문.css"}
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>jQuery</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <button id="btn_data">클릭해주세요!</button>
+        <div id="data"></div

@@ -1,13 +1,1 @@
-.card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: gray;
-}
-
-.aside {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-}/*# sourceMappingURL=013_mixin.css.map */
+{"version":3,"sources":["style.scss","style.css"],"names":[],"mappings":"AAkBA;EAVC,aAAA;EACA,uBAAA;EACA,mBAAA;EACG,gBAAA;EASA,sBAAA;ACdJ;ADMI;EACI,kBAMgB;ACVxB;;ADiBA;EAlBC,aAAA;EACA,uBAAA;EACA,mBAAA;EACG,gBAAA;EAiBA,2BAAA;ACXJ;ADLI;EACI,kBAc

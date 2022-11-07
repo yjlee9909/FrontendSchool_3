@@ -1,1 +1,11 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"012_논리연산자.css"}
+h1 {
+  color: red;
+  font-size: 32px;
+}
+h1 span {
+  color: blue;
+}
+
+p {
+  text-align: center;
+}/*# sourceMap

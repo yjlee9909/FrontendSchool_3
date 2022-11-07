@@ -1,9 +1,1 @@
-.box {
-  height: 100px;
-  width: 100px;
-  background-color: red;
-  transition: all 0.5s;
-}
-.box:hover {
-  background-color: blue;
-}/*# sourceMappingURL=003_부모선택자_엠퍼센트.css.map */
+{"version":3,"sources":["style.scss","style.css"],"names":[],"mappings":"AACA;EACI,yCAAA;EACA,sBAAA;EACA,4BAAA;EACA,kBAAA;EACA,WAAA;EACA,YAAA;ACAJ;;ADOE;EACE,YAAA;EACA,YAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,eAAA;EACA,mBAAA;ACJJ;;AD
