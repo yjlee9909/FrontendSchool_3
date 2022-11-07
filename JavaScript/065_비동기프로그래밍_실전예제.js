@@ -96,4 +96,88 @@ async function getData(){
     document.body.appendChild(main);
 }
 
+// 5.1 - async, await 코드에 이미지 추가하기
+async function getData() {
+	const response = await fetch(`http://test.api.weniv.co.kr/mall`);
+	const productData = await(response.json());
+	console.log(productData);
+
+	console.log(productData.map(item => item.productName));
+	console.log(productData.map(item => item.price));
+
+	const main = document.createElement('main');
+	productData.forEach(item => {
+		const productCard = document.createElement('article');
+		const productName = document.createElement('h2');
+		const productImg = document.createElement('img');
+		const productPrice = document.createElement('p');
+
+		productName.innerText = item.productName;
+		productPrice.innerText = item.price;
+
+		// img
+		productImg.setAttribute('src','http://test.api.weniv.co.kr/' + item.thumbnailImg)
+		productImg.setAttribute('class','이미지');
+		productImg.setAttribute('alt', item.productName + ' 상품 이미지');
+
+		productCard.appendChild(productName);
+		productCard.appendChild(productImg);
+		productCard.appendChild(productPrice);
+		main.appendChild(productCard);
+	})
+	document.body.appendChild(main);
+}
 getData()
+
+getData()
+
+// 6. 이미지 추가해보기
+
+fetch("http://test.api.weniv.co.kr/mall")
+    .then((response) => response.json())
+    .then((json) => {
+        for (let item of json) {
+            let 제목 = document.createElement('h2')
+            제목.innerText = item.productName
+            // document.childNodes[0].childNodes[1].append(제목)
+            document.body.append(제목)
+
+            let 사진 = document.createElement('img')
+            // 'http://test.api.weniv.co.kr/' + item.thumbnailImg;
+            사진.setAttribute('src', 'http://test.api.weniv.co.kr/' + item.thumbnailImg)
+            사진.setAttribute('class', '이미지')
+            사진.setAttribute('alt', item.productName + ' 상품 이미지')
+            document.childNodes[0].childNodes[1].append(사진)
+            
+            let 가격 = document.createElement('p')
+            가격.innerText = item.price
+            document.childNodes[0].childNodes[1].append(가격)
+        }
+    });
+
+// 내가 짜본 코드
+fetch('http://test.api.weniv.co.kr/mall')
+.then(response => response.json())
+.then(data => {
+	const main = document.createElement('main');
+	for (let item of data) {
+		const productCard = document.createElement('article');
+		const productName = document.createElement('h2');
+		const productPrice = document.createElement('p');
+		productName.innerText = item.productName;
+		productPrice.innerText = item.price;
+		productCard.appendChild(productName);
+		productCard.appendChild(productPrice);
+
+		// 이미지
+		const img = document.createElement('img');
+		img.setAttribute('src','http://test.api.weniv.co.kr/' + item.thumbnailImg);
+		img.setAttribute('class','이미지');
+		img.setAttribute('alt', item.productName + ' 상품 이미지');
+
+		productCard.appendChild(img);
+
+		main.appendChild(productCard);
+	}
+	document.body.appendChild(main);
+})
