@@ -39,12 +39,14 @@
                 );
             }
 
+            // {} -> 자바스크립트 문법으로 인식
             const app = (
                 <div>
-                    <ImageSlide/>
-                    <Title/>
-                    <Info/>
-                    <Price/>
+                    
+                    {[<ImageSlide/>,
+                    <Title/>,
+                    <Info/>,
+                    <Price/>]}
                 </div>
             );
 
