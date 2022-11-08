@@ -1,8 +1,12 @@
-<!DOCTYPE html>
-<html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>jQuery</title>
-        <script src="
+.profile-user, .comment-user {
+  background-image: url("../assets/user.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.comment-user {
+  border-width: 10px;
+}/*# sourceMappingURL=017_extend.css.map */

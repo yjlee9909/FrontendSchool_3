@@ -1,6 +1,5 @@
-.one {
-  font-size: 34px;
-}/*# sourceMappingURL=006_변수.css.map */;
+li:nth-child(1) .thumb {
+  background-image: url(./assets/img/background1.png);
 }
 
 li:nth-child(2) .thumb {

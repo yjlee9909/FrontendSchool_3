@@ -1,11 +1,1 @@
-<html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>위니브 스토어</title>
-        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    </head>
-
-    <body>
-        <div id="root"></div>
+{"version":3,"sources":["style.scss","style.css"],"names":[],"mappings":"AAkBA;EAVC,aAAA;EACA,uBAAA;EACA,mBAAA;EACG,gBAAA;EASA,sBAAA;ACdJ;ADMI;EACI,kBAMgB;ACVxB;;ADiBA;EAlBC,aAAA;EACA,uBAAA;EACA,mBAAA;EACG,gBAAA;EAiBA,2BAAA;ACXJ;ADLI;EACI,kBAcgB;ACPxB;;ADcA;EA1BC,aAAA;EACA,uBAAA;EACA,mBAAA;EACG,gBAAA;EAyBI,YAAA;EAEJ,2BAAA;ACTJ;ADjBI;EACI,kBANoB;ACyB5B","file":"style.css"}

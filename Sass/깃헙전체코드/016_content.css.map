@@ -1,9 +1,1 @@
-@charset "UTF-8";
-/* 
-여러줄 주석이며
-이 주석은 css로 변환될 때 보입니다.
-*/
-nav {
-  background: lightskyblue;
-  padding: 10px;
-  height: 50px;
+{"version":3,"sources":["016_content.scss","016_content.css"],"names":[],"mappings":"AAUA;EARC,aAAA;EACA,uBAAA;EACA,mBAAA;EAQO,YAAA;ACPR","file":"016_content.css"}

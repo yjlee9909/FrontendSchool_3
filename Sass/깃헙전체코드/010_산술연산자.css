@@ -1,4 +1,21 @@
-{"version":3,"sources":["ex1.scss","ex1.css"],"names":[],"mappings":"AAAA;EACC,mBAAA;ACCD;ADAC;EACC,aAAA;EACA,yBAAA;ACEF;ADDE;EACC,kBAAA;ACGH","file":"ex1.css"}0.603125cm;
+.test {
+  width: calc(100% - 80px);
+}
+
+.one {
+  font-size: 5px;
+}
+
+.three {
+  font-size: 0.84375in;
+}
+
+.four {
+  font-size: 0.603125cm;
+}
+
+.five {
+  font-size: 0.603125cm;
 }
 
 .six {

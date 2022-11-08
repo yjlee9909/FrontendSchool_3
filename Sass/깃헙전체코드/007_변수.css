@@ -1,2 +1,11 @@
-{"version":3,"sources":["027.scss","027.css"],"names":[],"mappings":"AAAA;EACI,gBAAA;ACCJ","file":"027.css"} font-weight: 500;
+.test {
+  background-image: url("./assets/img/background.png");
+}
+
+.test3 {
+  font-size: 12px;
+}
+
+.test4 {
+  font-weight: 500;
 }/*# sourceMappingURL=007_변수.css.map */
