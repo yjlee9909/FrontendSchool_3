@@ -1,0 +1,9 @@
+total 1024
+drwx------  1 yoojin  staff  131072 11  9 13:22 .
+drwx------  1 yoojin  staff  131072  9 17 14:40 ..
+-rwx------  1 yoojin  staff       0 11  9 13:23 001.html
+-rwx------  1 yoojin  staff       0 11  9 13:23 002.html
+-rwx------  1 yoojin  staff       0 11  9 13:23 003.html
+-rwx------  1 yoojin  staff       0 11  9 13:47 result.txt
+-rwx------  1 yoojin  staff      12 11  9 13:41 text.txt
+-rwx------  1 yoojin  staff      12 11  9 13:43 text2.txt
