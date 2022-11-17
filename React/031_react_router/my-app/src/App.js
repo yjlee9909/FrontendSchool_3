@@ -1,66 +1,54 @@
-import { BrowserRouter, Routes, Route, Link, useLocation, Outlet } from "react-router-dom";
-// 중첩된 라우터
+import { BrowserRouter, Routes, Route, Link, useLocation, useParams, Outlet } from "react-router-dom";
+
+// - **Home Page : /
+// - **Product Detail Page** : /products/:id
+    
+//     ex) /products/1 , /products/2, /products/3, /products/4
+    
+// - **Product Detail Notice Page : /products/:id/notice
+//     - ex) /products/1/notice , /products/2/notice…
+// - **Cart Page : /cart
+// - **Coupon Page : /users/coupon
+// - **Question Page : /users/question
+// - **Notice Page : /users/notice
+// - **User Page : /users
+function Main() {
+  return (<p>Main</p>)
+}
+function A() {
+  return (<p>A</p>)
+}
+function B() {
+  return (<p>B</p>)
+}
+function C() {
+  return (<p>C</p>)
+}
+function One() {
+  return (<p>One</p>)
+}
+function Two() {
+  return (<p>Two</p>)
+}
+function D() {
+  return (<p>D</p>)
+}
 function App() {
   return (
     <BrowserRouter>
-      <Link to="/"> home </Link>
-      <Link to="/one"> one </Link>
-      <Link to="/two"> two </Link>
-      <Link to="/three"> three </Link>
-      {/* 라우트를 감싸줍니다. */}
       <Routes>
-        <Route path="/" element={<Index />}/>
-        <Route path="/one" element={<One name='licat' />}/>
-        <Route path="/two" element={<Two />}/>
-        <Route path="/three/*" element={<Outlet />}>
-          <Route path="" element={<HojunIndex/>}/>
-          <Route path="hojunone/" element={<HojunOne/>}/>
-          <Route path="hojuntwo/" element={<HojunTwo/>}/>
+        <Route path="/" element={<Main/>}/>
+        <Route path="/a" element={<A/>}/>
+        <Route path="/b" element={<B/>}/>
+        <Route path="/c" element={<C/>}/>
+        <Route path="/c/*" element={<Outlet/>}>
+          <Route path="1" element={<One/>}/>
+          <Route path="2" element={<Two/>}/>
+          <Route path="d" element={<D/>}/>
         </Route>
-        <Route path="/blog/:id" element={<Blog />}/>
       </Routes>
     </BrowserRouter>
   );
-}
-
-function Index(){
-  return <h1>hello world0</h1>
-}
-
-function One({name}){
-  return <h1>{name} world1</h1>
-}
-
-function Two(){
-  return <h1>hello world2</h1>
-}
-
-function Three(){
-  return <h1>hello world3</h1>
-}
-
-function Blog(){
-	const location = useLocation();
-  console.log(location)
-  return <h1>hello Blog</h1>
-}
-
-function HojunIndex(){
-	const location = useLocation();
-  console.log(location)
-  return <h1>hello Hojun index</h1>
-}
-
-function HojunOne(){
-	const location = useLocation();
-  console.log(location)
-  return <h1>hello Hojun 1</h1>
-}
-
-function HojunTwo(){
-	const location = useLocation();
-  console.log(location)
-  return <h1>hello Hojun 2</h1>
 }
 
 export default App;
