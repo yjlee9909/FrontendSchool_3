@@ -21,10 +21,10 @@ const substractNumber = () => {
 const countReducer = (state = 0, action) => {
     switch (action.type){
         case 'ADD':
-            minus.disabled = false;
+            minus.disabled = false
             return state + 1
         case 'SUBSTRACT':
-            plus.disabled = false;
+            minus.disabled = false
             return state - 1
         default:
             return state
@@ -68,7 +68,6 @@ store.subscribe(hadleWrite)
 // Init
 // number.innerHTML = count;
 // updateResult(count);
-
 
 
 // Event
