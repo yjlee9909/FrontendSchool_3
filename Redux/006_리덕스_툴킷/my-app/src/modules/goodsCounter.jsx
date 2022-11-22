@@ -65,4 +65,5 @@ console.log(counterSlice)
 // Action creators are generated for each case reducer function
 export const { increment, decrement } = counterSlice.actions
 
-export default counterSlice.reducer // reducers처럼 s붙지 않습니다. console.log로 찍어보면 알 수 있습니다.
+export default counterSlice.reducer 
+// reducers처럼 s붙지 않습니다. console.log로 찍어보면 알 수 있습니다.
