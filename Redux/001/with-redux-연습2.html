@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.js"></script>
+</head>
+<!-- 1. 새로운 컴포넌트가 생성이 되었을때 코드가 늘어나지 않습니다.
+     2. 새로운 컴포넌트 안에서만 코딩하면 됩니다. -->
+<body>
+    <style>
+        div {
+            display: inline-block;
+        }
+        .container {
+            border: 5px solid black;
+            padding: 10px;
+            width: 100px;
+            height: 200px;
+            display: inline-block;
+            margin-top: 20px;
+            border-radius: 0px;
+        }
+    </style>
+    <button onclick="store.dispatch({type:'CHANGE_RADIUS', borderRadius:'0px'})">사각형</button>
+    <button onclick="store.dispatch({type:'CHANGE_RADIUS', borderRadius:'5%'})">둥근</button>
+    <button onclick="store.dispatch({type:'CHANGE_RADIUS', borderRadius:'50%'})">원</button>
+    <button onclick="store.dispatch({type:'CHANGE_COLOR', color:'pink'})">핑크</button>
+    <button onclick="store.dispatch({type:'CHANGE_COLOR', color:'yellow'})">노랑</button>
+    
+    <br>
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+    
+    <script>
+        // 바리스타 (오류나는 경우 여기서)
+        function reducer(state, action) {
+            if (state === undefined) {
+                return { 
+                    // 초깃값 지정
+                    borderRadius: '0px',
+                    color: 'white',
+                }
+            } 
+            var newState;
+            if (action.type === 'CHANGE_RADIUS') {
+                // console.log(state)
+                newState = { ...state, borderRadius: action.borderRadius};
+            } else if (action.type === 'CHANGE_COLOR') {
+                // console.log(state)
+                newState = { ...state, color: action.color};
+            } 
+            return newState;
+        }
+        // Redux는 cdn으로 생깁니다.
+        var store = Redux.createStore(
+            reducer,
+            window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // redux dev tools를 사용하기 위한 코드
+        );
+        function One() {
+            var state = store.getState();
+            document.querySelector('#one').innerHTML = `
+                <div class="container" style="border-radius:${state.borderRadius}; background-color:${state.color}"></div>
+            `;
+        }
+        store.subscribe(One);
+        One();
+        function Two() {
+            var state = store.getState();
+            document.querySelector('#two').innerHTML = `
+                <div class="container" style="border-radius:${state.borderRadius}; background-color:${state.color}"></div>
+            `;
+        }
+        store.subscribe(Two);
+        Two();
+
+        function Three() {
+            var state = store.getState();
+            document.querySelector('#three').innerHTML = `
+                <div class="container" style="border-radius:${state.borderRadius}; background-color:${state.color}"></div>
+            `;
+        }
+        store.subscribe(Three);
+        Three();
+    </script>
+</body>
+
+</html>
