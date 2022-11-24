@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+    </head>
+    <body>
+        <h1>hello sop</h1>
+        <iframe src="test.html" frameborder="0" class="test"></iframe>
+        <iframe
+            class="youtube"
+            width="1083"
+            height="609"
+            src="https://www.youtube.com/embed/4TWR90KJl84"
+            title="aespa 에스파 'Next Level' MV"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+        ></iframe>
+        <script>
+            let x = document.querySelector(".test");
+            let y = document.querySelector(".youtube");
+
+            // load -> document가 모두 로딩되었을 때 html이 가지고 있던 모든 리소스가 완료가 되었을때 load 이벤트가 트리거 된다.
+            // 해당 iframe이 로드가 끝날때까지 기다려야한다.
+            // contentDocument - 만약 iframe과 iframe's parent document가 같은 origin을 가진다면 ifrarm의 document 객체를 반환합니다.
+            x.addEventListener("load", () => {
+                console.log("same origin : ", x.contentDocument);
+                x.contentDocument.body.style.backgroundColor = "red";
+                // test.html의 변화
+            });
+            y.addEventListener("load", () => {
+                console.log("same origin : ", y.contentDocument);
+                y.contentDocument.body.style.backgroundColor = "red";
+                // 반드시 같은 출처인 경우에만 리소스 상호작용이 가능하다!!
+            });
+        </script>
+    </body>
+</html>
